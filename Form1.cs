@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -42,17 +43,11 @@ namespace Snake
             Snake.Add(head);
 
             //start themeSong
-            playSimpleSound();
+            playSimpleSound();            
 
-            lblScore.Text = Settings.Score.ToString();
-
-//============================================================Test
-            lblHighScore.Text = Settings.Score.ToString();
-
-//============================================================Test
-
+            lblScore.Text = Settings.Score.ToString();            
             GenerateFood();
-
+            HighScore();
         }
 
         //Place random food object
@@ -219,7 +214,6 @@ namespace Snake
             //Update Score
             Settings.Score += Settings.Points;
             lblScore.Text = Settings.Score.ToString();
-
             GenerateFood();
         }
        
@@ -227,7 +221,10 @@ namespace Snake
         {
             // when player Die
             playLoseSound();
-            Settings.GameOver = true;            
+            //save high score to txt file
+            HighScore();
+            Settings.GameOver = true;  
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -286,12 +283,26 @@ namespace Snake
             simpleSound.Play();
         }
 
-        private void HighScore(object sender, EventArgs e)
+        /// <summary>
+        /// When player die, the highest score will be save in HighScore.txt in resoucres
+        /// if the score < highscore -- new highscore = score 
+        /// I dont know how this method work magically, so dont touch it! -- updated by lavi ( time wasted to fix it > 5 hrs )
+        /// </summary>
+        private void HighScore()
         {
-            Settings.Score += Settings.Points;
-            lblHighScore.Text = Settings.Score.ToString();
-        }
+            if (Settings.Score > Settings.highScore)
+            {
+                var projectPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+                string filePath = Path.Combine(projectPath, "Resources");                
 
+                Settings.highScore = Settings.Score;
+                //File.WriteAllText(filePath, Settings.highScore.ToString());
+                File.WriteAllText("HighScore.txt", Settings.highScore.ToString());
+            }
+
+            //ReadFile from resources -- complete
+            lblOutPut.Text = "Kỷ lục: " + File.ReadAllText("HighScore.txt");
+        }
         
     }
 }

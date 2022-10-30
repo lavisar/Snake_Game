@@ -1,4 +1,5 @@
-﻿namespace Snake
+﻿using System.IO;
+namespace Snake
 {
     public enum Direction
     {
@@ -15,7 +16,8 @@
         public static int Speed { get; set; }
         public static int Score { get; set; }
         public static int Points { get; set; }
-        public int HighScore { get; set;  }
+        public static int highScore { get; set; }
+
         public static bool GameOver { get; set; }
         public static Direction direction { get; set; }
 
@@ -32,11 +34,11 @@
             Score = 0;       //Begin Score
             Points = 100;    //when the snake eat circle, score += 100
 
-            //Test HighScore
-            //HighScore = System.IO.;
+            highScore = 0;
 
             GameOver = false;
             direction = Direction.Down;
+
         }
     }
 

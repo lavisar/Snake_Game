@@ -34,7 +34,7 @@
             this.lblScore = new System.Windows.Forms.Label();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
             this.lblGameOver = new System.Windows.Forms.Label();
-            this.lblHighScore = new System.Windows.Forms.Label();
+            this.lblOutPut = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbCanvas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,16 +80,15 @@
             this.lblGameOver.Visible = false;
             this.lblGameOver.Click += new System.EventHandler(this.lblGameOver_Click);
             // 
-            // lblHighScore
+            // lblOutPut
             // 
-            this.lblHighScore.AutoSize = true;
-            this.lblHighScore.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHighScore.Location = new System.Drawing.Point(455, 77);
-            this.lblHighScore.Name = "lblHighScore";
-            this.lblHighScore.Size = new System.Drawing.Size(87, 14);
-            this.lblHighScore.TabIndex = 4;
-            this.lblHighScore.Text = "Điểm Cao Nhất:";
-            this.lblHighScore.Click += new System.EventHandler(this.HighScore);
+            this.lblOutPut.AutoSize = true;
+            this.lblOutPut.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.lblOutPut.Location = new System.Drawing.Point(458, 68);
+            this.lblOutPut.Name = "lblOutPut";
+            this.lblOutPut.Size = new System.Drawing.Size(40, 13);
+            this.lblOutPut.TabIndex = 4;
+            this.lblOutPut.Text = "Kỷ Lục";
             // 
             // Form1
             // 
@@ -97,12 +96,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(723, 437);
-            this.Controls.Add(this.lblHighScore);
+            this.Controls.Add(this.lblOutPut);
             this.Controls.Add(this.lblGameOver);
             this.Controls.Add(this.lblScore);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbCanvas);
-            this.Cursor = System.Windows.Forms.Cursors.No;
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Name = "Form1";
             this.Text = "Form1";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
@@ -120,7 +119,7 @@
         private System.Windows.Forms.Label lblScore;
         private System.Windows.Forms.Timer gameTimer;
         private System.Windows.Forms.Label lblGameOver;
-        private System.Windows.Forms.Label lblHighScore;
+        private System.Windows.Forms.Label lblOutPut;
     }
 }
 

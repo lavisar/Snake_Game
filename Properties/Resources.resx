@@ -124,6 +124,9 @@
   <data name="String1" xml:space="preserve">
     <value />
   </data>
+  <data name="temp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\saveScore\temp.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
   <data name="ThemeSong" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\media\ThemeSong.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
