@@ -286,7 +286,7 @@ namespace Snake
         /// <summary>
         /// When player die, the highest score will be save in HighScore.txt in resoucres
         /// if the score < highscore -- new highscore = score 
-        /// I dont know how this method work magically, so dont touch it! -- updated by lavi ( time wasted to fix it > 5 hrs )
+        /// I dont know how this function work magically, so dont touch it! -- updated by lavi ( time wasted to fix it > 5 hrs )
         /// </summary>
         private void HighScore()
         {
