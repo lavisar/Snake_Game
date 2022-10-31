@@ -3,12 +3,14 @@ using System.Windows.Forms;
 
 namespace Snake
 {
+
     internal class Input
     {
         //Load list of available Keyboard buttons
+
         private static Hashtable keyTable = new Hashtable();
 
-        //Perform a check to see if a particular button is pressed.
+        //Perform a check to see if a particular button is pressed.        
         public static bool KeyPressed(Keys key)
         {
             if (keyTable[key] == null)

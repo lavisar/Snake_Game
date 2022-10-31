@@ -46,6 +46,7 @@
             this.pbCanvas.Size = new System.Drawing.Size(432, 424);
             this.pbCanvas.TabIndex = 0;
             this.pbCanvas.TabStop = false;
+            this.pbCanvas.Click += new System.EventHandler(this.pbCanvas_Click);
             this.pbCanvas.Paint += new System.Windows.Forms.PaintEventHandler(this.pbCanvas_Paint);
             // 
             // label1
@@ -95,7 +96,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
-            this.ClientSize = new System.Drawing.Size(723, 437);
+            this.ClientSize = new System.Drawing.Size(726, 437);
             this.Controls.Add(this.lblOutPut);
             this.Controls.Add(this.lblGameOver);
             this.Controls.Add(this.lblScore);

@@ -34,7 +34,7 @@ namespace Snake
             Score = 0;       //Begin Score
             Points = 100;    //when the snake eat circle, score += 100
 
-            highScore = 0;
+            //highScore = 0;
 
             GameOver = false;
             direction = Direction.Down;

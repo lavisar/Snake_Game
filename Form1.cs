@@ -43,7 +43,7 @@ namespace Snake
             Snake.Add(head);
 
             //start themeSong
-            playSimpleSound();            
+            playSimpleSound();
 
             lblScore.Text = Settings.Score.ToString();            
             GenerateFood();
@@ -215,14 +215,24 @@ namespace Snake
             Settings.Score += Settings.Points;
             lblScore.Text = Settings.Score.ToString();
             GenerateFood();
+
+            //*********************************
+            //                                *
+            //CANNOT PUT HIGHSCORE() IN HERE  *
+            //                                *
+            //*********************************
         }
        
         private void Die()
         {
             // when player Die
             playLoseSound();
-            //save high score to txt file
-            HighScore();
+
+            if (Settings.Score > Settings.highScore)
+            {
+                HighScore();
+            }
+            
             Settings.GameOver = true;  
             
         }
@@ -283,15 +293,24 @@ namespace Snake
             simpleSound.Play();
         }
 
-        /// <summary>
-        /// When player die, the highest score will be save in HighScore.txt in resoucres
-        /// if the score < highscore -- new highscore = score 
-        /// I dont know how this function work magically, so dont touch it! -- updated by lavi ( time wasted to fix it > 5 hrs )
-        /// </summary>
+        ///<summary>
+        ///When player die, the highest score will be save in HighScore.txt in resoucres
+        ///if the score < highscore -- new highscore = score 
+        ///I dont know how this function work magically, so dont touch it! --updated by lavi (time wasted to fix it > 5 hrs)
+        ///</summary>
+        
+        //**********************
+        //TODO                 *
+        //**********************
+        // *** find a way to write highscore to resources to display in other device
+
+
         private void HighScore()
         {
+
+            //This if statement check if highScore < Score to write new highScore to txt file                         
             if (Settings.Score > Settings.highScore)
-            {
+            {                
                 var projectPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
                 string filePath = Path.Combine(projectPath, "Resources");                
 
@@ -300,9 +319,24 @@ namespace Snake
                 File.WriteAllText("HighScore.txt", Settings.highScore.ToString());
             }
 
+            // PLEASE README
+            //Problem in readfile -- other device cannot find file HighScore.txt
+            /*
+             *Fix: after cloning project in your computer, right click to your snake project in solution explorer
+             *Choose properties > resources (in left side bar) > Add resources (in top bar) > 
+             * > click on the \/ and choose add existing file > direct to your project folder and doubleClick to saveScore > doubleClick to HighScore.txt 
+             * || Rebuil your project and start !  
+             * Thank you!
+             */
+
             //ReadFile from resources -- complete
             lblOutPut.Text = "Kỷ lục: " + File.ReadAllText("HighScore.txt");
         }
         
+        private void pbCanvas_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
