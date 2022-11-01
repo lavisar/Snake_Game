@@ -45,7 +45,9 @@ namespace Snake
             //start themeSong
             playSimpleSound();
 
-            lblScore.Text = Settings.Score.ToString();            
+            lblScore.Text = Settings.Score.ToString();
+            lblOutPut.Text = "Kỷ lục: " + File.ReadAllText("HighScore.txt");
+
             GenerateFood();
             HighScore();
         }
@@ -315,6 +317,7 @@ namespace Snake
                 string filePath = Path.Combine(projectPath, "Resources");                
 
                 Settings.highScore = Settings.Score;
+
                 //File.WriteAllText(filePath, Settings.highScore.ToString());
                 File.WriteAllText("HighScore.txt", Settings.highScore.ToString());
             }
@@ -330,7 +333,8 @@ namespace Snake
              */
 
             //ReadFile from resources -- complete
-            lblOutPut.Text = "Kỷ lục: " + File.ReadAllText("HighScore.txt");
+
+            lblOutPut.Text = "Kỷ lục: " + File.ReadAllText("HighScore.txt"); 
         }
         
         private void pbCanvas_Click(object sender, EventArgs e)
