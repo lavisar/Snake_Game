@@ -49,7 +49,7 @@ namespace Snake
             lblOutPut.Text = "Kỷ lục: " + File.ReadAllText("HighScore.txt");
 
             GenerateFood();
-            HighScore();
+            //HighScore();
         }
 
         //Place random food object
@@ -162,6 +162,7 @@ namespace Snake
                     if (Snake[i].X < 0 || Snake[i].Y < 0
                         || Snake[i].X >= maxXPos || Snake[i].Y >= maxYPos)
                     {
+                        playLoseSound();
                         Die();
                     }
 
@@ -172,6 +173,7 @@ namespace Snake
                         if (Snake[i].X == Snake[j].X &&
                            Snake[i].Y == Snake[j].Y)
                         {
+                            playLoseSound();
                             Die();
                         }
                     }
@@ -217,19 +219,14 @@ namespace Snake
             Settings.Score += Settings.Points;
             lblScore.Text = Settings.Score.ToString();
             GenerateFood();
-
-            //*********************************
-            //                                *
-            //CANNOT PUT HIGHSCORE() IN HERE  *
-            //                                *
-            //*********************************
         }
        
         private void Die()
         {
             // when player Die
-            playLoseSound();
+            //playLoseSound();
 
+            //dont touch it!
             if (Settings.Score > Settings.highScore)
             {
                 HighScore();
@@ -281,15 +278,13 @@ namespace Snake
              * -- Added into resources
              * Anyone have the project can play without changing the path
              */
-
             System.IO.Stream str = Properties.Resources.ThemeSong;
             SoundPlayer simpleSound = new SoundPlayer(str);
             simpleSound.PlayLooping();  //PlayLooping() is play looping a sound
         }
         private void playLoseSound()
         {
-            //SoundPlayer simpleSound = new SoundPlayer(@".\winForm\lavi\Snake\media\whenLose.wav"); -- code to play sound in local computer
-            
+            //SoundPlayer simpleSound = new SoundPlayer(@".\winForm\lavi\Snake\media\whenLose.wav"); -- code to play sound in local computer            
             System.IO.Stream str = Properties.Resources.whenLose;
             SoundPlayer simpleSound = new SoundPlayer(str);
             simpleSound.Play();
@@ -301,10 +296,10 @@ namespace Snake
         ///I dont know how this function work magically, so dont touch it! --updated by lavi (time wasted to fix it > 5 hrs)
         ///</summary>
         
-        //**********************
-        //TODO                 *
-        //**********************
-        // *** find a way to write highscore to resources to display in other device  -- done (add ReadMe)
+        //************
+        //**  TODO  **
+        //************
+        //find a way to write highscore to resources to display in other device  -- done (add ReadMe)
 
 
         private void HighScore()
@@ -332,8 +327,7 @@ namespace Snake
              * Thank you!
              */
 
-            //ReadFile from resources -- complete
-
+            //ReadFile from resources
             lblOutPut.Text = "Kỷ lục: " + File.ReadAllText("HighScore.txt"); 
         }
         
