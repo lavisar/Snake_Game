@@ -304,7 +304,7 @@ namespace Snake
         //**********************
         //TODO                 *
         //**********************
-        // *** find a way to write highscore to resources to display in other device
+        // *** find a way to write highscore to resources to display in other device  -- done (add ReadMe)
 
 
         private void HighScore()
