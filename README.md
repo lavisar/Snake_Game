@@ -1,4 +1,4 @@
-# HCMUE Cs Windows Form Project
+# HCMUE C# Windows Form Project
 ## Project title: Snake Game
 
 <pre>
