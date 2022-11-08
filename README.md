@@ -2,6 +2,7 @@
 
 HCMC University of Education (HCMUE)
 Project title: Snake Game
+
 ========================================================================
 |   4 collaborators:                                                   |
 |                                                                      |
