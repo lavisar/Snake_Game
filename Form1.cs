@@ -6,7 +6,6 @@ using System.IO;
 using System.Linq;
 using System.Media;
 using System.Windows.Forms;
-
 namespace Snake
 {
     public partial class Form1 : Form
@@ -17,41 +16,32 @@ namespace Snake
         public Form1()
         {
             InitializeComponent();
-
             //Set settings to default
             new Settings();
-
             //Set game speed and start timer
             gameTimer.Interval = 1000 / Settings.Speed;
             gameTimer.Tick += UpdateScreen;
             gameTimer.Start();
-
             //Start New game
             StartGame();
         }
-
         private void StartGame()
         {
             lblGameOver.Visible = false;
 
             //Set settings to default
             new Settings();
-
             //Create new player object
             Snake.Clear();
             Circle head = new Circle {X = 10, Y = 5};
             Snake.Add(head);
-
             //start themeSong
             playSimpleSound();
-
             lblScore.Text = Settings.Score.ToString();
             lblOutPut.Text = "Kỷ lục: " + File.ReadAllText("HighScore.txt");
-
             GenerateFood();
             //HighScore();
         }
-
         //Place random food object
         private void GenerateFood()
         {
@@ -61,8 +51,6 @@ namespace Snake
             Random random = new Random();
             food = new Circle {X = random.Next(0, maxXPos), Y = random.Next(0, maxYPos)};
         }
-
-
         private void UpdateScreen(object sender, EventArgs e)
         {
             //Check for Game Over
@@ -91,7 +79,6 @@ namespace Snake
             pbCanvas.Invalidate();
 
         }
-
         private void pbCanvas_Paint(object sender, PaintEventArgs e)
         {
             Graphics canvas = e.Graphics;
@@ -106,19 +93,15 @@ namespace Snake
                         snakeColour = Brushes.Black;     //Draw head
                     else
                         snakeColour = Brushes.Green;    //Rest of body
-
                     //Draw snake
                     canvas.FillEllipse(snakeColour,
                         new Rectangle(Snake[i].X * Settings.Width,
                                       Snake[i].Y * Settings.Height,
                                       Settings.Width, Settings.Height));
-
-
                     //Draw Food
                     canvas.FillEllipse(Brushes.Tomato,
                         new Rectangle(food.X * Settings.Width,
                              food.Y * Settings.Height, Settings.Width, Settings.Height));
-
                 }
             }
             else
@@ -128,8 +111,6 @@ namespace Snake
                 lblGameOver.Visible = true;
             }
         }
-
-
         private void MovePlayer()
         {
             for (int i = Snake.Count - 1; i >= 0; i--)
@@ -152,12 +133,9 @@ namespace Snake
                             Snake[i].Y++;
                             break;
                     }
-
-
                     //Get maximum X and Y Pos
                     int maxXPos = pbCanvas.Size.Width / Settings.Width;
                     int maxYPos = pbCanvas.Size.Height / Settings.Height;
-
                     //Detect collission with game borders.
                     if (Snake[i].X < 0 || Snake[i].Y < 0
                         || Snake[i].X >= maxXPos || Snake[i].Y >= maxYPos)
@@ -165,8 +143,6 @@ namespace Snake
                         playLoseSound();
                         Die();
                     }
-
-
                     //When snake eat her body => dead
                     for (int j = 1; j < Snake.Count; j++)
                     {
@@ -177,7 +153,6 @@ namespace Snake
                             Die();
                         }
                     }
-
                     //Detect collision with food piece
                     if (Snake[0].X == food.X && Snake[0].Y == food.Y)
                     {
