@@ -1,8 +1,7 @@
-# Data Structures and Algorithms Project
-
-## HCMC University of Education (HCMUE)
+# HCMUE Data Structures and Algorithms Project
 ## Project title: Snake Game
 
+<pre>
 ========================================================================
 |   4 collaborators:                                                   |
 |                                                                      |
@@ -11,8 +10,8 @@
 |         Nguyễn Thị Kim Hằng   |  (minioncrush115@gmail.com)          |
 |         Nguyễn Quách Hải      |  (nguyenquachhai123@gmail.com)       |
 |                                                                      |
-========================================================================                           
-
+========================================================================
+</pre>
 >If you use Visual Studio to cloning this project, you need to setup a litle to run this project so please folow my guide bellow
 
 ### After cloning to your Visual Studio:
