@@ -1,7 +1,7 @@
 # Data Structures and Algorithms Project
 
-HCMC University of Education (HCMUE)
-Project title: Snake Game
+##HCMC University of Education (HCMUE)
+##Project title: Snake Game
 
 ========================================================================
 |   4 collaborators:                                                   |
