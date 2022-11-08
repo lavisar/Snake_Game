@@ -1,4 +1,4 @@
-# HCMUE Data Structures and Algorithms Project
+# HCMUE Cs Windows Form Project
 ## Project title: Snake Game
 
 <pre>
