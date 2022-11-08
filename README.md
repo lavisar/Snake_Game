@@ -12,7 +12,7 @@
 |                                                                      |
 ========================================================================
 </pre>
->If you use Visual Studio to cloning this project, you need to setup a litle to run this project so please folow my guide bellow
+>If you use Visual Studio to cloning this project, you need to setup a litle to run this project so please follow my guide bellow
 
 ### After cloning to your Visual Studio:
 1. Please add "//" in 'lblOutPut.Text = "Kỷ lục: " + File.ReadAllText("HighScore.txt");' (line 49 of Form1.cs) ➜ Run the project and Close.
