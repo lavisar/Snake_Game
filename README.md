@@ -2,11 +2,11 @@
 ## Project title: Snake Game
 
 <pre>
-========================================================================
+========================================================================   
 |   4 collaborators:                                                   |
 |                                                                      |
 |         Sar Lavi              |  (Sarlavi6969@gmail.com)             |
-|         Yến Linh              |  (ngoyenlinh2003.dmx@gmail.com)      |
+|         Ngô Thị Yến Linh      |  (ngoyenlinh2003.dmx@gmail.com)      |
 |         Nguyễn Thị Kim Hằng   |  (minioncrush115@gmail.com)          |
 |         Nguyễn Quách Hải      |  (nguyenquachhai123@gmail.com)       |
 |                                                                      |
@@ -23,4 +23,4 @@
 
 4. Rebuil your project and ejoy the game 🏁
 
-Thank you for spending your time to look at our work!
+Thank you for spending your time to look at our work
